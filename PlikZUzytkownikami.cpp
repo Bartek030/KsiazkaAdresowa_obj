@@ -37,17 +37,16 @@ string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowym
     return liniaZDanymiUzytkownika;
 }
 
-vector<Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku(vector<Uzytkownik> &uzytkownicy) {
+vector<Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku() {
     string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
+    vector<Uzytkownik> uzytkownicy;
 
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::in);
-
     if (plikTekstowy.good() == true) {
         while (getline(plikTekstowy, daneJednegoUzytkownikaOddzielonePionowymiKreskami)) {
             pobierzDaneUzytkownika(daneJednegoUzytkownikaOddzielonePionowymiKreskami);
             uzytkownicy.push_back(uzytkownik);
         }
-
     }
     plikTekstowy.close();
     return uzytkownicy;
