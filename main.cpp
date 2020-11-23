@@ -16,19 +16,19 @@ int main() {
 
             switch (wybor)
             {
-           /* case '1':
-                rejestracjaUzytkownika(uzytkownicy);
-                break;*/
-           /* case '2':
-                idZalogowanegoUzytkownika = logowanieUzytkownika(uzytkownicy);
-                break;*/
-           /* case '9':
+            case '1':
+                ksiazkaAdresowa.rejestracjaUzytkownika();
+                break;
+            case '2':
+                ksiazkaAdresowa.logowanieUzytkownika();
+                break;
+            case '9':
                 exit(0);
-                break;*/
-         /*   default:
+                break;
+            default:
                 cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
                 system("pause");
-                break;*/
+                break;
             }
         }
         else
