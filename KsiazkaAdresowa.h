@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "UzytkownikMenedzer.h"
+#include "MetodyPomocnicze.h"
 
 using namespace std;
 
@@ -14,9 +15,10 @@ public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami) {
         uzytkownikMenedzer.wczytajUzytkownikowZPliku();
         idZalogowanegoUzytkownika = 0;
-        };
+    };
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
+    char wybierzOpcjeZMenuGlownego();
 
     int pobierzIdZalogowanegoUzytkownika();
 };

@@ -3,8 +3,7 @@
 
 using namespace std;
 
-string MetodyPomocnicze::konwerjsaIntNaString(int liczba)
-{
+string MetodyPomocnicze::konwerjsaIntNaString(int liczba) {
     ostringstream ss;
     ss << liczba;
     string str = ss.str();
@@ -15,8 +14,7 @@ int MetodyPomocnicze::konwersjaStringNaInt(string liczba) {
     return atoi(liczba.c_str());
 }
 
-string MetodyPomocnicze::wczytajLinie()
-{
+string MetodyPomocnicze::wczytajLinie() {
     string wejscie = "";
     cin.clear();
     cin.sync();
@@ -24,36 +22,16 @@ string MetodyPomocnicze::wczytajLinie()
     return wejscie;
 }
 
-char MetodyPomocnicze::wybierzOpcjeZMenuGlownego()
-{
-    char wybor;
-
-    system("cls");
-    cout << "    >>> MENU  GLOWNE <<<" << endl;
-    cout << "---------------------------" << endl;
-    cout << "1. Rejestracja" << endl;
-    cout << "2. Logowanie" << endl;
-    cout << "9. Koniec programu" << endl;
-    cout << "---------------------------" << endl;
-    cout << "Twoj wybor: ";
-    wybor = wczytajZnak();
-
-    return wybor;
-}
-
-char MetodyPomocnicze::wczytajZnak()
-{
+char MetodyPomocnicze::wczytajZnak() {
     string wejscie = "";
     char znak  = {0};
 
-    while (true)
-    {
+    while (true) {
         cin.clear();
         cin.sync();
         getline(cin, wejscie);
 
-        if (wejscie.length() == 1)
-        {
+        if (wejscie.length() == 1) {
             znak = wejscie[0];
             break;
         }
