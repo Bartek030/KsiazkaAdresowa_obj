@@ -14,7 +14,7 @@ public:
         uzytkownikMenedzer.wczytajUzytkownikowZPliku();
         };
     void rejestracjaUzytkownika();
-    void wypiszWszystkichUzytkownikow();
+    void logowanieUzytkownika();
 };
 
 #endif // KSIAZKAADRESOWA_H

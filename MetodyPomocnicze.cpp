@@ -14,3 +14,13 @@ string MetodyPomocnicze::konwerjsaIntNaString(int liczba)
 int MetodyPomocnicze::konwersjaStringNaInt(string liczba) {
     return atoi(liczba.c_str());
 }
+
+string MetodyPomocnicze::wczytajLinie()
+{
+    string wejscie = "";
+    cin.clear();
+    cin.sync();
+    getline(cin, wejscie);
+    return wejscie;
+}
+
