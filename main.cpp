@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     char wybor;
 
     while (true) {
@@ -64,7 +64,7 @@ int main() {
                        idZalogowanegoUzytkownika = 0;
                        adresaci.clear();
                        break;*/
-            }
+           }
         }
     }
     return 0;
