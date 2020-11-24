@@ -31,9 +31,9 @@ int main() {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor) {
-                /*  case '1':
-                      idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
-                      break;*/
+                  case '1':
+                      ksiazkaAdresowa.dodajAdresata();
+                      break;
                 /*  case '2':
                       wyszukajAdresatowPoImieniu(adresaci);
                       break;*/

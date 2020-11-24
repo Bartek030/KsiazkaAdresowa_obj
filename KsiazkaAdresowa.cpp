@@ -59,3 +59,7 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
 void KsiazkaAdresowa::wylogowanieUzytkownika() {
     idZalogowanegoUzytkownika = 0;
 }
+
+void KsiazkaAdresowa::dodajAdresata() {
+    adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika);
+}
