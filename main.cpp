@@ -40,9 +40,9 @@ int main() {
                 /*   case '3':
                        wyszukajAdresatowPoNazwisku(adresaci);
                        break;*/
-                /*   case '4':
-                       wyswietlWszystkichAdresatow(adresaci);
-                       break;*/
+                   case '4':
+                       ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+                       break;
                 /*  case '5':
                       idUsunietegoAdresata = usunAdresata(adresaci);
                       idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
