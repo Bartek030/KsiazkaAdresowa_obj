@@ -21,6 +21,7 @@ public:
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
     char wybierzOpcjeZMenuGlownego();
+    char wybierzOpcjeZMenuUzytkownika();
 
     int pobierzIdZalogowanegoUzytkownika();
 };
