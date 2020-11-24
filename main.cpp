@@ -53,10 +53,9 @@ int main() {
                    case '7':
                        ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                        break;
-                /*   case '8':
-                       idZalogowanegoUzytkownika = 0;
-                       adresaci.clear();
-                       break;*/
+                   case '8':
+                       ksiazkaAdresowa.wylogowanieUzytkownika();
+                       break;
            }
         }
     }
