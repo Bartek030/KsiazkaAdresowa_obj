@@ -22,6 +22,7 @@ public:
     void logowanieUzytkownika();
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
 
     int pobierzIdZalogowanegoUzytkownika();
 };

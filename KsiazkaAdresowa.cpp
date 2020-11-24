@@ -51,3 +51,7 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
 
     return wybor;
 }
+
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
+    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+}
