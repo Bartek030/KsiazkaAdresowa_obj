@@ -47,10 +47,6 @@ bool UzytkownikMenedzer::czyIstniejeLogin(string login) {
     }
 }
 
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku() {
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku ();
-}
-
 void UzytkownikMenedzer::logowanieUzytkownika() {
     string login = "", haslo = "";
 
@@ -100,4 +96,16 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUz
         }
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
+
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany() {
+    if (idZalogowanegoUzytkownika > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+void UzytkownikMenedzer::wylogowanieUzytkownika() {
+    idZalogowanegoUzytkownika = 0;
 }

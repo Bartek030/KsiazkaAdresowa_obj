@@ -6,12 +6,9 @@ void KsiazkaAdresowa::rejestracjaUzytkownika() {
 
 void KsiazkaAdresowa::logowanieUzytkownika() {
     uzytkownikMenedzer.logowanieUzytkownika();
-    idZalogowanegoUzytkownika = uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
-    adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-}
-
-int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika() {
-    return idZalogowanegoUzytkownika;
+    if (uzytkownikMenedzer.czyUzytkownikJestZalogowany()) {
+        adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKI_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+    }
 }
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
@@ -53,17 +50,33 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
 }
 
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
-    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
 }
 
 void KsiazkaAdresowa::wylogowanieUzytkownika() {
-    idZalogowanegoUzytkownika = 0;
+    uzytkownikMenedzer.wylogowanieUzytkownika();
+    delete adresatMenedzer;
+    adresatMenedzer = NULL;
 }
 
 void KsiazkaAdresowa::dodajAdresata() {
-    adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika);
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany()) {
+        adresatMenedzer -> dodajAdresata(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+    } else {
+        cout << "Aby dodac adresata nalezy najpierw zalogowac sie!" << endl;
+        system("pause");
+    }
 }
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
-    adresatMenedzer.wyswietlWszystkichAdresatow();
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany()) {
+        adresatMenedzer -> wyswietlWszystkichAdresatow();
+    } else {
+        cout << "Aby wyswietlic wszystkich adresatow nalezy najpierw zalogowac sie!" << endl;
+        system("pause");
+    }
+}
+
+bool KsiazkaAdresowa::czyUzytkownikJestZalogowany() {
+    return uzytkownikMenedzer.czyUzytkownikJestZalogowany();
 }
