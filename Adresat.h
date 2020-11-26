@@ -15,13 +15,13 @@ class Adresat {
     string adres;
 
 public:
-    void ustawId(int noweId);
-    void ustawIdUzytkownika(int noweIdUzytkownika);
-    void ustawImie(string noweImie);
-    void ustawNazwisko(string noweNazwisko);
-    void ustawNumerTelefonu(string nowyNumerTelefonu);
-    void ustawEmail(string nowyEmail);
-    void ustawAdres(string nowyAdres);
+    void ustawId(int id);
+    void ustawIdUzytkownika(int idUzytkownika);
+    void ustawImie(string imie);
+    void ustawNazwisko(string nazwisko);
+    void ustawNumerTelefonu(string numerTelefonu);
+    void ustawEmail(string email);
+    void ustawAdres(string adres);
 
     int pobierzId();
     int pobierzIdUzytkownika();

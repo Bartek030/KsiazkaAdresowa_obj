@@ -1,14 +1,14 @@
 #include "Uzytkownik.h"
 
-void Uzytkownik::ustawId(int noweId) {
-    if (noweId >= 0)
-        id = noweId;
+void Uzytkownik::ustawId(int id) {
+    if (id >= 0)
+        this -> id = id;
 }
-void Uzytkownik::ustawLogin(string nowyLogin) {
-    login = nowyLogin;
+void Uzytkownik::ustawLogin(string login) {
+    this -> login = login;
 }
-void Uzytkownik::ustawHaslo(string noweHaslo) {
-    haslo = noweHaslo;
+void Uzytkownik::ustawHaslo(string haslo) {
+    this -> haslo = haslo;
 }
 int Uzytkownik::pobierzId() {
     return id;
