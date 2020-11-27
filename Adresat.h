@@ -32,16 +32,4 @@ public:
     string pobierzAdres();
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
 #endif // ADRESAT_H
