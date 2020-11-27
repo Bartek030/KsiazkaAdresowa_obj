@@ -80,3 +80,7 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
 bool KsiazkaAdresowa::czyUzytkownikJestZalogowany() {
     return uzytkownikMenedzer.czyUzytkownikJestZalogowany();
 }
+
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu() {
+    adresatMenedzer -> wyszukajAdresatowPoImieniu();
+}
