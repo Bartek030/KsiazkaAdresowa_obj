@@ -5,9 +5,9 @@
     <id>UMLClass</id>
     <coordinates>
       <x>720</x>
-      <y>0</y>
+      <y>80</y>
       <w>350</w>
-      <h>290</h>
+      <h>390</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
@@ -25,14 +25,18 @@
 + wylogowanieUzytkownika () : void
 + dodajAdresata () : void
 + wyswietlWszystkichAdresatow() : void
-+ bool czyUzytkownikJestZalogowany() : bool</panel_attributes>
++ bool czyUzytkownikJestZalogowany() : bool
++ wyszukajAdresatowPoImieniu() : void
++ wyszukajAdresatowPoNazwisku() : void
++ usunAdresata() : void
++ edytujAdresata() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>410</y>
+      <y>560</y>
       <w>130</w>
       <h>130</h>
     </coordinates>
@@ -49,7 +53,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>250</x>
-      <y>310</y>
+      <y>460</y>
       <w>370</w>
       <h>240</h>
     </coordinates>
@@ -76,7 +80,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>130</x>
-      <y>640</y>
+      <y>790</y>
       <w>550</w>
       <h>220</h>
     </coordinates>
@@ -99,7 +103,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>770</x>
-      <y>510</y>
+      <y>660</y>
       <w>270</w>
       <h>210</h>
     </coordinates>
@@ -110,14 +114,16 @@
 + konwersjaStringNaInt () : int
 + wczytajLinie () : string
 + wczytajZnak () : char
-+ zamienPierwszaLitereNaDuzaAPozostaleNaMale () : string</panel_attributes>
++ zamienPierwszaLitereNaDuzaAPozostaleNaMale () : string
++ podajIdWybranegoAdresata() : int
++ wczytajLiczbeCalkowita() : int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>570</x>
-      <y>180</y>
+      <y>330</y>
       <w>170</w>
       <h>150</h>
     </coordinates>
@@ -128,7 +134,7 @@
     <id>Relation</id>
     <coordinates>
       <x>480</x>
-      <y>540</y>
+      <y>690</y>
       <w>40</w>
       <h>120</h>
     </coordinates>
@@ -139,7 +145,7 @@
     <id>Relation</id>
     <coordinates>
       <x>120</x>
-      <y>410</y>
+      <y>560</y>
       <w>150</w>
       <h>60</h>
     </coordinates>
@@ -150,7 +156,7 @@
     <id>Relation</id>
     <coordinates>
       <x>670</x>
-      <y>670</y>
+      <y>820</y>
       <w>120</w>
       <h>110</h>
     </coordinates>
@@ -160,19 +166,19 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>10</x>
-      <y>530</y>
-      <w>140</w>
-      <h>140</h>
+      <x>100</x>
+      <y>680</y>
+      <w>80</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>120.0;120.0;10.0;10.0</additional_attributes>
+    <additional_attributes>60.0;110.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>610</x>
-      <y>490</y>
+      <y>640</y>
       <w>180</w>
       <h>90</h>
     </coordinates>
@@ -183,7 +189,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1630</x>
-      <y>360</y>
+      <y>510</y>
       <w>150</w>
       <h>160</h>
     </coordinates>
@@ -203,9 +209,9 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1220</x>
-      <y>630</y>
+      <y>780</y>
       <w>490</w>
-      <h>260</h>
+      <h>310</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
@@ -220,14 +226,18 @@
 - pobierzDaneAdresata () : Adresat
 - pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : int
 - zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami () : string
-- czyPlikJestPusty : bool</panel_attributes>
+- czyPlikJestPusty : bool
++ usunAdresataZPliku () : void
+- usunPlik () : void
+- zmienNazwePliku () : void
++ zaktualizujDaneWybranegoAdresataWPliku () : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1030</x>
-      <y>660</y>
+      <y>810</y>
       <w>210</w>
       <h>70</h>
     </coordinates>
@@ -238,7 +248,7 @@
     <id>Relation</id>
     <coordinates>
       <x>1620</x>
-      <y>510</y>
+      <y>660</y>
       <w>90</w>
       <h>140</h>
     </coordinates>
@@ -248,54 +258,54 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1360</x>
-      <y>480</y>
-      <w>50</w>
-      <h>170</h>
+      <x>1380</x>
+      <y>660</y>
+      <w>40</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;30.0;150.0</additional_attributes>
+    <additional_attributes>20.0;10.0;10.0;120.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1490</x>
-      <y>380</y>
-      <w>160</w>
-      <h>50</h>
+      <x>1520</x>
+      <y>540</y>
+      <w>130</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;140.0;30.0</additional_attributes>
+    <additional_attributes>10.0;10.0;110.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1060</x>
-      <y>180</y>
-      <w>160</w>
-      <h>120</h>
+      <y>330</y>
+      <w>190</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;140.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;170.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1030</x>
-      <y>450</y>
-      <w>150</w>
-      <h>140</h>
+      <y>560</y>
+      <w>180</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;120.0</additional_attributes>
+    <additional_attributes>160.0;10.0;10.0;160.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1160</x>
-      <y>280</y>
+      <x>1190</x>
+      <y>390</y>
       <w>340</w>
-      <h>210</h>
+      <h>280</h>
     </coordinates>
     <panel_attributes>AdresatMenedzer
 --
@@ -308,18 +318,24 @@
 + dodajAdresata : void
 - podajDaneNowegoAdresata () : Adresat
 + wyswietlWszystkichAdresatow() : void
-- wyswietlDaneAdresata () : void</panel_attributes>
+- wyswietlDaneAdresata () : void
++ wyszukajAdresatowPoImieniu() : void
+- wyswietlIloscWyszukanychAdresatow() : void
++ wyszukajAdresatowPoNazwisku() : void
++ usunAdresata() : void
++ edytujAdresata() : void
+- wybierzOpcjeZMenuEdycja() : char</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>810</x>
-      <y>280</y>
-      <w>190</w>
-      <h>250</h>
+      <x>960</x>
+      <y>460</y>
+      <w>40</w>
+      <h>220</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>170.0;10.0;10.0;230.0</additional_attributes>
+    <additional_attributes>20.0;10.0;10.0;200.0</additional_attributes>
   </element>
 </diagram>

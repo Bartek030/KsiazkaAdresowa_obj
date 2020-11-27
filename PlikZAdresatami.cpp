@@ -134,3 +134,94 @@ bool PlikZAdresatami::czyPlikJestPusty(fstream &plikTekstowy) {
     else
         return false;
 }
+
+void PlikZAdresatami::usunAdresataZPliku(int idUsuwanegoAdresata) {
+    fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
+    string wczytanaLinia = "";
+    const string nazwaPlikuTymczasowego = "tymczasowy.txt";
+    int numerWczytanejLinii = 0;
+    int numerUsuwanejLinii = 0;
+    int idWczytanegoAdresata = 0;
+    int idPoprzednioWczytanegoAdresata = 0;
+
+    odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
+    tymczasowyPlikTekstowy.open(nazwaPlikuTymczasowego, ios::out | ios::app);
+
+    if (odczytywanyPlikTekstowy.good()) {
+        while (getline(odczytywanyPlikTekstowy, wczytanaLinia)) {
+            numerWczytanejLinii++;
+            idPoprzednioWczytanegoAdresata = idWczytanegoAdresata;
+            idWczytanegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
+            if(idWczytanegoAdresata == idUsuwanegoAdresata) {
+                numerUsuwanejLinii = numerWczytanejLinii;
+            } else {
+                if (numerWczytanejLinii == 1 && numerWczytanejLinii != numerUsuwanejLinii) {
+                    tymczasowyPlikTekstowy << wczytanaLinia;
+                } else if (numerWczytanejLinii == 2 && numerUsuwanejLinii == 1) {
+                    tymczasowyPlikTekstowy << wczytanaLinia;
+                } else if (numerWczytanejLinii > 2 && numerUsuwanejLinii == 1) {
+                    tymczasowyPlikTekstowy << endl << wczytanaLinia;
+                } else if (numerWczytanejLinii > 1 && numerUsuwanejLinii != 1) {
+                    tymczasowyPlikTekstowy << endl << wczytanaLinia;
+                }
+            }
+        }
+    }
+    odczytywanyPlikTekstowy.close();
+    tymczasowyPlikTekstowy.close();
+
+    if (numerUsuwanejLinii == numerWczytanejLinii) {
+        idOstatniegoAdresataWPliku = idPoprzednioWczytanegoAdresata;
+    }
+
+    usunPlik(NAZWA_PLIKU_Z_ADRESATAMI);
+    zmienNazwePliku(nazwaPlikuTymczasowego, NAZWA_PLIKU_Z_ADRESATAMI);
+}
+
+void PlikZAdresatami::usunPlik(string nazwaPlikuZRozszerzeniem) {
+    if (remove(nazwaPlikuZRozszerzeniem.c_str()) == 0) {}
+    else
+        cout << "Nie udalo sie usunac pliku " << nazwaPlikuZRozszerzeniem << endl;
+}
+
+void PlikZAdresatami::zmienNazwePliku(string staraNazwa, string nowaNazwa) {
+    if (rename(staraNazwa.c_str(), nowaNazwa.c_str()) == 0) {}
+    else
+        cout << "Nazwa pliku nie zostala zmieniona." << staraNazwa << endl;
+}
+
+void PlikZAdresatami::zaktualizujDaneWybranegoAdresataWPliku(Adresat adresat) {
+    fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
+    string wczytanaLinia = "";
+    string liniaZDanymiAdresataOddzielonePionowymiKreskami = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
+    const string nazwaPlikuTymczasowego = "tymczasowy.txt";
+    int numerWczytanejLinii = 1;
+    int idWczytanegoAdresata = 0;
+
+    odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
+    tymczasowyPlikTekstowy.open(nazwaPlikuTymczasowego.c_str(), ios::out | ios::app);
+
+    if (odczytywanyPlikTekstowy.good()) {
+        while (getline(odczytywanyPlikTekstowy, wczytanaLinia)) {
+            idWczytanegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
+            if (idWczytanegoAdresata == adresat.pobierzId()) {
+                if (numerWczytanejLinii == 1)
+                    tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami;
+                else if (numerWczytanejLinii > 1)
+                    tymczasowyPlikTekstowy << endl << liniaZDanymiAdresataOddzielonePionowymiKreskami;
+            } else {
+                if (numerWczytanejLinii == 1)
+                    tymczasowyPlikTekstowy << wczytanaLinia;
+                else if (numerWczytanejLinii > 1)
+                    tymczasowyPlikTekstowy << endl << wczytanaLinia;
+            }
+            numerWczytanejLinii++;
+        }
+        odczytywanyPlikTekstowy.close();
+        tymczasowyPlikTekstowy.close();
+
+        usunPlik(NAZWA_PLIKU_Z_ADRESATAMI);
+        zmienNazwePliku(nazwaPlikuTymczasowego, NAZWA_PLIKU_Z_ADRESATAMI);
+    }
+}
+
