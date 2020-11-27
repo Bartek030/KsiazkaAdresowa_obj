@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>720</x>
-      <y>120</y>
+      <y>70</y>
       <w>350</w>
       <h>390</h>
     </coordinates>
@@ -28,14 +28,15 @@
 + bool czyUzytkownikJestZalogowany() : bool
 + wyszukajAdresatowPoImieniu() : void
 + wyszukajAdresatowPoNazwisku() : void
-+ usunAdresata() : void</panel_attributes>
++ usunAdresata() : void
++ edytujAdresata() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>600</y>
+      <y>550</y>
       <w>130</w>
       <h>130</h>
     </coordinates>
@@ -52,7 +53,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>250</x>
-      <y>500</y>
+      <y>450</y>
       <w>370</w>
       <h>240</h>
     </coordinates>
@@ -79,7 +80,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>130</x>
-      <y>830</y>
+      <y>780</y>
       <w>550</w>
       <h>220</h>
     </coordinates>
@@ -102,7 +103,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>770</x>
-      <y>700</y>
+      <y>650</y>
       <w>270</w>
       <h>210</h>
     </coordinates>
@@ -122,7 +123,7 @@
     <id>Relation</id>
     <coordinates>
       <x>570</x>
-      <y>370</y>
+      <y>320</y>
       <w>170</w>
       <h>150</h>
     </coordinates>
@@ -133,7 +134,7 @@
     <id>Relation</id>
     <coordinates>
       <x>480</x>
-      <y>730</y>
+      <y>680</y>
       <w>40</w>
       <h>120</h>
     </coordinates>
@@ -144,7 +145,7 @@
     <id>Relation</id>
     <coordinates>
       <x>120</x>
-      <y>600</y>
+      <y>550</y>
       <w>150</w>
       <h>60</h>
     </coordinates>
@@ -155,7 +156,7 @@
     <id>Relation</id>
     <coordinates>
       <x>670</x>
-      <y>860</y>
+      <y>810</y>
       <w>120</w>
       <h>110</h>
     </coordinates>
@@ -166,7 +167,7 @@
     <id>Relation</id>
     <coordinates>
       <x>10</x>
-      <y>720</y>
+      <y>670</y>
       <w>140</w>
       <h>140</h>
     </coordinates>
@@ -177,7 +178,7 @@
     <id>Relation</id>
     <coordinates>
       <x>610</x>
-      <y>680</y>
+      <y>630</y>
       <w>180</w>
       <h>90</h>
     </coordinates>
@@ -188,7 +189,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1630</x>
-      <y>550</y>
+      <y>500</y>
       <w>150</w>
       <h>160</h>
     </coordinates>
@@ -208,7 +209,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1220</x>
-      <y>820</y>
+      <y>770</y>
       <w>490</w>
       <h>260</h>
     </coordinates>
@@ -228,14 +229,15 @@
 - czyPlikJestPusty : bool
 + usunAdresataZPliku () : void
 - usunPlik () : void
-- zmienNazwePliku () : void</panel_attributes>
+- zmienNazwePliku () : void
++ zaktualizujDaneWybranegoAdresataWPliku () : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1030</x>
-      <y>850</y>
+      <y>800</y>
       <w>210</w>
       <h>70</h>
     </coordinates>
@@ -246,7 +248,7 @@
     <id>Relation</id>
     <coordinates>
       <x>1620</x>
-      <y>700</y>
+      <y>650</y>
       <w>90</w>
       <h>140</h>
     </coordinates>
@@ -257,7 +259,7 @@
     <id>Relation</id>
     <coordinates>
       <x>1360</x>
-      <y>670</y>
+      <y>620</y>
       <w>50</w>
       <h>170</h>
     </coordinates>
@@ -268,7 +270,7 @@
     <id>Relation</id>
     <coordinates>
       <x>1490</x>
-      <y>570</y>
+      <y>520</y>
       <w>160</w>
       <h>50</h>
     </coordinates>
@@ -279,7 +281,7 @@
     <id>Relation</id>
     <coordinates>
       <x>1060</x>
-      <y>370</y>
+      <y>320</y>
       <w>160</w>
       <h>120</h>
     </coordinates>
@@ -290,7 +292,7 @@
     <id>Relation</id>
     <coordinates>
       <x>1030</x>
-      <y>640</y>
+      <y>590</y>
       <w>150</w>
       <h>140</h>
     </coordinates>
@@ -301,7 +303,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1160</x>
-      <y>470</y>
+      <y>420</y>
       <w>340</w>
       <h>210</h>
     </coordinates>
@@ -320,14 +322,16 @@
 + wyszukajAdresatowPoImieniu() : void
 - wyswietlIloscWyszukanychAdresatow() : void
 + wyszukajAdresatowPoNazwisku() : void
-+ usunAdresata() : void</panel_attributes>
++ usunAdresata() : void
++ edytujAdresata() : void
+- wybierzOpcjeZMenuEdycja() : char</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>810</x>
-      <y>500</y>
+      <y>450</y>
       <w>190</w>
       <h>220</h>
     </coordinates>
