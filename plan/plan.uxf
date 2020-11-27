@@ -26,7 +26,8 @@
 + dodajAdresata () : void
 + wyswietlWszystkichAdresatow() : void
 + bool czyUzytkownikJestZalogowany() : bool
-+ wyszukajAdresatowPoImieniu() : void</panel_attributes>
++ wyszukajAdresatowPoImieniu() : void
++ wyszukajAdresatowPoNazwisku() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -311,7 +312,8 @@
 + wyswietlWszystkichAdresatow() : void
 - wyswietlDaneAdresata () : void
 + wyszukajAdresatowPoImieniu() : void
-- wyswietlIloscWyszukanychAdresatow() : void</panel_attributes>
+- wyswietlIloscWyszukanychAdresatow() : void
++ wyszukajAdresatowPoNazwisku() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

@@ -27,18 +27,7 @@ public:
     void dodajAdresata(int idZalogowanegoUzytkownika);
     void wyswietlWszystkichAdresatow();
     void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 #endif // ADRESATMENEDZER_H
