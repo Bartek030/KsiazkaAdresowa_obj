@@ -11,7 +11,6 @@
 using namespace std;
 
 class PlikZAdresatami : public PlikTekstowy {
-    //const string NAZWA_PLIKU_Z_ADRESATAMI;
     int idOstatniegoAdresataWPliku;
 
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
@@ -19,7 +18,6 @@ class PlikZAdresatami : public PlikTekstowy {
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
-    //bool czyPlikJestPusty(fstream &plikTekstowy);
     void usunPlik(string nazwaPlikuZRozszerzeniem);
     void zmienNazwePliku(string staraNazwa, string nowaNazwa);
 
