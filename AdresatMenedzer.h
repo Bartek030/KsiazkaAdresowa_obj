@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <windows.h>
+#include <conio.h>
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
 #include "MetodyPomocnicze.h"
@@ -28,6 +29,7 @@ public:
     void wyswietlWszystkichAdresatow();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
+    void usunAdresata();
 };
 
 #endif // ADRESATMENEDZER_H

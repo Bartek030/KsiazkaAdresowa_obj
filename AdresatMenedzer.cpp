@@ -129,3 +129,35 @@ void AdresatMenedzer::wyszukajAdresatowPoNazwisku() {
     cout << endl;
     system("pause");
 }
+
+void AdresatMenedzer::usunAdresata() {
+    int idUsuwanegoAdresata = 0;
+    char znak;
+    bool czyIstniejeAdresat = false;
+
+    system("cls");
+    cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
+    idUsuwanegoAdresata = MetodyPomocnicze::podajIdWybranegoAdresata();
+
+    for (vector <Adresat>::iterator itr = adresaci.begin(); itr != adresaci.end(); itr++) {
+        if (itr -> pobierzId() == idUsuwanegoAdresata) {
+            czyIstniejeAdresat = true;
+            cout << endl << "Potwierdz naciskajac klawisz 't': ";
+            znak = getch();
+            if (znak == 't' || znak == 'T') {
+                adresaci.erase(itr);
+                plikZAdresatami.usunAdresataZPliku(idUsuwanegoAdresata);
+                cout << endl << endl << "Adresat zostal USUNIETY" << endl << endl;
+                system("pause");
+                break;
+            } else {
+                cout << endl << endl << "Wybrany adresat NIE zostal usuniety" << endl << endl;
+                system("pause");
+            }
+        }
+    }
+    if (czyIstniejeAdresat == false) {
+        cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
+        system("pause");
+    }
+}

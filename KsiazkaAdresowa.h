@@ -32,6 +32,7 @@ public:
     bool czyUzytkownikJestZalogowany();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
+    void usunAdresata();
 };
 
 #endif // KSIAZKAADRESOWA_H
